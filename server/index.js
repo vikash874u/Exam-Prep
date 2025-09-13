@@ -8,8 +8,7 @@ app.use(cors())
 app.use(express.json());
 
 //Mongodb connection
-const URL = 'mongodb+srv://yourUsername:yourPassword@atlas-sql-68c3c8ea3ec6db02f7f7c42b-lsq6t1.a.query.mongodb.net/examprep?retryWrites=true&w=majority&ssl=true&authSource=admin
-'
+const URL = 'mongodb://atlas-sql-68c3c8ea3ec6db02f7f7c42b-lsq6t1.a.query.mongodb.net/examprep?ssl=true&authSource=admin'
 mongoose.connect(URL)
 .then(() => console.log('MongoDB connected'))
   .catch(err => console.log('MongoDB connection error:', err));
