@@ -21,7 +21,7 @@ const Login = () => {
   try {
     const res = await axios.post("https://exam-prep-3ee5.onrender.com/api/admin/login", form);
 	console.log(res.data);
-    if (res.data.message === "Login Successfully") {
+    if (res.data.message === "admin registration successfully") {
       alert("Login successfully");
       localStorage.setItem("userEmail", res.data.user.email);
       localStorage.setItem("userId", res.data.user.id);
