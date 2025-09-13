@@ -20,13 +20,13 @@ const Login = () => {
   e.preventDefault();
   try {
     const res = await axios.post("https://exam-prep-3ee5.onrender.com/api/admin", form);
-
+	console.log(res.data);
     if (res.data.message === "Login Successfully") {
       alert("Login successfully");
       localStorage.setItem("userEmail", res.data.user.email);
       localStorage.setItem("userId", res.data.user.id);
       localStorage.setItem("userRole", res.data.user.role);
-
+		
       window.location.href = "/userdash";
     } else {
       alert(res.data.message || "Login failed");
