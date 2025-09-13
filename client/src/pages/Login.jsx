@@ -19,7 +19,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
   e.preventDefault();
   try {
-    const res = await axios.post("https://exam-prep-3ee5.onrender.com/api/examinee/login", form);
+    const res = await axios.post("https://exam-prep-3ee5.onrender.com/api/admin", form);
 
     if (res.data.message === "Login Successfully") {
       alert("Login successfully");
