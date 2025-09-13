@@ -1,14 +1,14 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const dotenv = require('dotenv');
+
 const app = express();
-dotenv.config();
+
 app.use(cors())
 app.use(express.json());
 
 //Mongodb connection
-const URL = process.env.MONGUrl || 'mongodb://localhost:27017/examprep'
+const URL = 'mongodb://atlas-sql-68c3c8ea3ec6db02f7f7c42b-lsq6t1.a.query.mongodb.net/examprep?ssl=true&authSource=admin'
 mongoose.connect(URL)
 .then(() => console.log('MongoDB connected'))
   .catch(err => console.log('MongoDB connection error:', err));
@@ -24,6 +24,6 @@ app.use("/api/examinee/",require('./routes/examineeRoute'))
 app.use("/api/message/",require('./routes/MessageRoute'))
 // api end
 
-app.listen(process.env.PORT,()=>{
+app.listen(5000,()=>{
     console.log("Server is running on http://localhost:5000/")
 })
