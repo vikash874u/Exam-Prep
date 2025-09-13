@@ -4,7 +4,8 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/',async(req,res)=>{
-    return res.json("api called")
+    const user = await Admin.find();
+    return res.json(user)
 });
 router.post('/',async(req,res)=>{
     const reg = await new Admin(req.body)
