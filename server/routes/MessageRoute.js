@@ -31,10 +31,10 @@ router.post('/', async (req, res) => {
 // ✅ Get all messages (admin view)
 router.get('/all', async (req, res) => {
   try {
-    // const msgs = await Message.find()
-    //   .populate('examineeId', 'name email')
-    //   .sort({ createdAt: -1 });
-    return res.json({ message: "ok hai" });
+    const msgs = await Message.find()
+      .populate('examineeId', 'name email')
+      .sort({ createdAt: -1 });
+    return res.json({ message: msgs });
   } catch (err) {
     console.error('Error fetching all messages:', err);
     return res.status(500).json({ message: 'Server error' });
