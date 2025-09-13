@@ -18,7 +18,7 @@ const ChangePassword = () => {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      const res = await axios.put(`http://localhost:5000/api/examinee/change/${id}`, form);
+      const res = await axios.put(`https://exam-prep-3ee5.onrender.com/api/examinee/change/${id}`, form);
       alert(res.data.message);
     } catch (error) {
       console.log(error);
