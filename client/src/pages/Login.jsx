@@ -26,8 +26,8 @@ const Login = () => {
       localStorage.setItem("userEmail", res.data.user.email);
       localStorage.setItem("userId", res.data.user.id);
       localStorage.setItem("userRole", res.data.user.role);
-		
-      window.location.href = "/userdash";
+	localStorage.setItem("role","admin")
+      window.location.href = "/addash";
     } else {
       alert(res.data.message || "Login failed");
     }
