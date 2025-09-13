@@ -19,7 +19,7 @@ const GetExam = () => {
   useEffect(() => {
     const fetchExam = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/exams/exam/${examId}`);
+        const res = await axios.get(`https://exam-prep-3ee5.onrender.com/api/exams/exam/${examId}`);
         const { exam: examData, questions: questionData } = res.data;
         setExam(examData);
         setQuestions(questionData);
